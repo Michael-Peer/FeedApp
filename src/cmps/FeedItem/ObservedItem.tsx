@@ -1,7 +1,6 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import { sendImppression } from "../../services/api-service";
-import { IFeedItem } from "../../utils/interfaces/FeedItem";
 
 interface IItemObserverProps {
     children: React.ReactNode
@@ -14,11 +13,7 @@ interface IItemObserverProps {
 function ObservedItem({ children, onFeedItemsToShow, isLast }: IItemObserverProps) {
     const ref = useRef<HTMLDivElement>(null)
 
-
-    
-
     function handleLastItemDisplay(entries: IntersectionObserverEntry[], observer: IntersectionObserver): void {
-
         const entry = entries[0];
           if(React.isValidElement(children) && entry.isIntersecting) {
             console.log('isIntersecting', entry);

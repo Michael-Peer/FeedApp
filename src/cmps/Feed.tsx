@@ -5,6 +5,7 @@ import FeedItem from './FeedItem/FeedItem';
 import ObservedItem from './FeedItem/ObservedItem';
 import useApiCall from '../hooks/useApiCall';
 import Spinner from './Spinner/Spinner';
+
 function Feed() {
   const [feedItemsToShow, setFeedItemsToShow] = useState<number>(6)
   const [ feedItems, loading, error ] = useApiCall<IFeedItem[]>(fetchFeed);
