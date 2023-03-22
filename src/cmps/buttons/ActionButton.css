@@ -1,0 +1,17 @@
+.l-c {
+    display: flex;
+    align-items: center;
+  }
+  
+  .l-c img {
+    margin-right: 8px;
+  }
+
+  span {
+    cursor: pointer;
+  }
+
+  span.liked {
+    color: #0A66C2;
+    font-weight: bold;
+  }

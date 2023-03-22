@@ -1,0 +1,10 @@
+.images {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.images img {
+    flex: 1 1;
+    max-height: 512px;
+    width: 0;
+}
