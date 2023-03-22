@@ -15,21 +15,17 @@ function ObservedItem({ children, onFeedItemsToShow, isLast }: IItemObserverProp
 
     function handleLastItemDisplay(entries: IntersectionObserverEntry[], observer: IntersectionObserver): void {
         const entry = entries[0];
-          if(React.isValidElement(children) && entry.isIntersecting) {
-            console.log('isIntersecting', entry);
-            
-            if ( onFeedItemsToShow && isLast) {
-                console.log('isLast', entry);
-                
-                onFeedItemsToShow() 
-            }
-            const {id, userId} = children.props.feedItem
+        if (React.isValidElement(children) && entry.isIntersecting) {
+
+            if (onFeedItemsToShow && isLast) onFeedItemsToShow()
+
+            const { id, userId } = children.props.feedItem
             sendImppression(userId, id)
-          
+
         }
     }
 
-    useEffect(() => {            
+    useEffect(() => {
 
         const feedEl = ref.current
 

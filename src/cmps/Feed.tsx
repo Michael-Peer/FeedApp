@@ -11,17 +11,10 @@ function Feed() {
   const [ feedItems, loading, error ] = useApiCall<IFeedItem[]>(fetchFeed);
 
   const onFeedItemsToShow = () => setFeedItemsToShow((prevFeedItems) => prevFeedItems + 6)
-  useEffect(() => {
-    if(!feedItems) return
-
-    console.log('feedItems', feedItems!![0]);
-    
-  }, [feedItems])
   
   if (loading) return <Spinner/>;
   if (error) return <div>Error: {error.message}</div>;
 
- 
   return (
     <div>
       {feedItems?.slice(0, feedItemsToShow).map((feedItem, idx) => {
